@@ -6,10 +6,7 @@ public class Main {
         System.out.println("Указан возраст человека " + age1);
         if (age1 >= 18) {
             System.out.println("Он совершеннолетний");
-        }
-        int age2 = 17;
-        System.out.println("Указан возраст человека " + age2);
-        if (age2 < 18) {
+        } else {
             System.out.println("Он не достиг совершеннолетия, нужно немного подождать");
         }
         //Exercise 2
@@ -34,24 +31,20 @@ public class Main {
         }
         //Exercise 4
         System.out.println("***Задача 4***");
-        int age3 = 18;
+        int age3 = 26;
         boolean baby = age3 < 2;
         boolean childGard = age3 >= 2 && age3 < 7;
         boolean school = age3 >= 7 && age3 < 18;
         boolean univer = age3 >= 18 && age3 <= 24;
         if (baby) {
             System.out.println("Если возраст человека равен " + age3 + ", то ему не нужно куда-то ходить");
-        }
-        if (childGard) {
+        } else if (childGard) {
             System.out.println("Если возраст человека равен " + age3 + ", то ему нужно ходить в детский сад");
-        }
-        if (school) {
+        } else if (school) {
             System.out.println("Если возраст человека равен " + age3 + ", то ему нужно ходить в школу");
-        }
-        if (univer) {
+        } else if (univer) {
             System.out.println("Если возраст человека равен " + age3 + ", то ему нужно ходить в ВУЗ");
-        }
-        if (!baby && !childGard && !school && !univer) {
+        } else {
             System.out.println("Если возраст человека равен " + age3 + ", то ему нужно ходить на работу");
         }
         //Exercise 5
@@ -70,33 +63,21 @@ public class Main {
         }
         //Exercise 6
         System.out.println("***Задача 6***");
-        int seatingPlacesTaken = 59;
-        int totalPlacesTaken = 97;
-        if ((102 - totalPlacesTaken - 60 + seatingPlacesTaken) < 0) {
-            System.out.println("Ошибка в воде исходных данных. Общее количество доступных мест не может быть меньше свободных сидячих мест");
+        int availableStandingPlaces = 15;
+        int availableSeatingPlaces = 3;
+        if (availableStandingPlaces > 0 || availableSeatingPlaces > 0) {
+            System.out.println("В вагоне достопно " + availableSeatingPlaces + " сидячих мест, и " + availableStandingPlaces + " стоячих мест");
         } else {
-            int availableStandingPlaces;
-            int availableSeatingPlaces;
-            if (totalPlacesTaken >= 102) {
-                System.out.println("В вагоне нет свободных мест");
-            } else {
-                availableSeatingPlaces = 60 - seatingPlacesTaken;
-                availableStandingPlaces = 102 - totalPlacesTaken - availableSeatingPlaces;
-                System.out.println("В вагоне достопно " + availableSeatingPlaces + " сидячих мест, и " + availableStandingPlaces + " стоячих мест");
-            }
+            System.out.println("В вагоне нет свободных мест");
         }
         //Exercise 7
         System.out.println("***Задача 7***");
         int one = 13;
-        int two = 15;
-        int three = 17;
-        if (one > two) {
-            if (one > three) {
-                System.out.println("Наибольшее число из 3х данных - " + one);
-            } else {
-                System.out.println("Наибольшее число из 3х данных - " + three);
-            }
-        } else if (two > three) {
+        int two = 17;
+        int three = 15;
+        if (one > two && one > three) {
+            System.out.println("Наибольшее число из 3х данных - " + one);
+        } else if (one < two && two > three) {
             System.out.println("Наибольшее число из 3х данных - " + two);
         } else {
             System.out.println("Наибольшее число из 3х данных - " + three);
