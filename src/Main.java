@@ -63,12 +63,18 @@ public class Main {
         }
         //Exercise 6
         System.out.println("***Задача 6***");
-        int availableStandingPlaces = 15;
-        int availableSeatingPlaces = 3;
-        if (availableStandingPlaces > 0 || availableSeatingPlaces > 0) {
-            System.out.println("В вагоне достопно " + availableSeatingPlaces + " сидячих мест, и " + availableStandingPlaces + " стоячих мест");
+        int totalSeats = 102; // всего мест
+        int seatingCapacity = 60; // всего сидячих мест, остальные стоячие
+        int ticket = 103; // это переменная мой билет
+        //Найдем, какое у меня место, сидячее, стоячее или же вагон забит и тебе придаться идти в другой вагон.
+        //Допускаю, что номер билета привязан к номерам свободных мест, и что с 1 по 60 это сидячие места.
+        // Пассажиры с номером билета от 1 до 60 занимают именно сидячие места.
+        if (ticket > 102) {
+            System.out.println("В вагоне нет свободных мест, иди в другой вагон");
+        } else if (ticket >= 1 && ticket <= 60) {
+            System.out.println("У тебя сидячее место");
         } else {
-            System.out.println("В вагоне нет свободных мест");
+            System.out.println("У тебя стоячее место");
         }
         //Exercise 7
         System.out.println("***Задача 7***");
